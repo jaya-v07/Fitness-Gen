@@ -1,0 +1,5 @@
+streamlit
+supabase
+uvicorn
+fastapi
+python-dotenv
