@@ -4,8 +4,8 @@ from pydantic import BaseModel
 class WorkoutRequest(BaseModel):
     user_id: str
     age: int
-    weight: int
-    height: int
+    weight: float
+    height: float
     goal: str
     experience: str
     
