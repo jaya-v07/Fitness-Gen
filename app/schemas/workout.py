@@ -2,13 +2,15 @@
 from pydantic import BaseModel
 
 class WorkoutRequest(BaseModel):
+    user_id: str
     age: int
-    weight: float
-    height: float
+    weight: int
+    height: int
     goal: str
+    experience: str
     
 
 class WorkoutResponse(BaseModel):
-    workout: str
-    duration: int
+    plan: str
+  
 #later, i want to add img/gif demonstrating the workout
