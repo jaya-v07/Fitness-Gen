@@ -23,6 +23,7 @@ Fitness-Gen/
 ├── LICENSE
 ├── README.md
 └── requirements.txt
+```text
 
 ## Endpoints
 ### Authentication
