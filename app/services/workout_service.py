@@ -1,8 +1,6 @@
 from app.db.supabase import supabase
-
 class WorkoutService:
-
-    def generate_workout(self, user_id: str, goal: str, experience: str, age: int, weight: int, height: int) -> dict:
+    def generate_workout(self, user_id: str, goal: str, experience: str, age: float, weight: float, height: float) -> dict:
         """
         Takes user parameters, bundles them into a mock profile-plan payload,
         and saves it straight into Supabase.
