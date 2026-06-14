@@ -1,4 +1,6 @@
 
+from typing import Any, Dict
+
 from pydantic import BaseModel
 
 class WorkoutRequest(BaseModel):
@@ -11,6 +13,7 @@ class WorkoutRequest(BaseModel):
     
 
 class WorkoutResponse(BaseModel):
-    plan: str
+  user_id: str
+  plan: Dict[str,Any]
   
 #later, i want to add img/gif demonstrating the workout

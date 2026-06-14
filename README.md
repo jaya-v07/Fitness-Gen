@@ -1,5 +1,5 @@
 # Fitness-Gen
-This AI -powered website uses supabase and FASTAPI to present fitness workout routines according to user's goal, experience and body (height, weight, and age)
+This AI - powered website uses supabase(POSTGRESQL) and FASTAPI to present fitness workout routines according to user's goal, experience and body (height, weight, and age)
 ## Project Structure
 
 ```text
@@ -21,13 +21,13 @@ Fitness-Gen/
 ├── .env
 ├── .gitignore
 ├── LICENSE
-├── README.md
+├── README.m
 └── requirements.txt
-```
-
+``` 
 ## Endpoints
 ### Authentication
-    */api/auth/signup
-    */api/auth/signup/profile
+    GET api/auth/home
+    POST api/auth/signup
+    POST api/auth/signup/profile
 ### Workouts
     */api/workout/generate

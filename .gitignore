@@ -219,3 +219,5 @@ __marimo__/
 
 .DS_Store
 __pycache__
+node_modules
+node_modules/

@@ -1,0 +1,81 @@
+/* Minimal, clean layout rules */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #fafafa;
+  color: #1a1a1a;
+}
+
+.minimal-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.minimal-header {
+  margin-bottom: 32px;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 16px;
+}
+
+.minimal-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.minimal-header p {
+  color: #666;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Workout Grid & Cards */
+.workout-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.workout-card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.workout-card:hover {
+  border-color: #999;
+}
+
+.workout-card h3 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.workout-type {
+  margin: 0;
+  font-size: 13px;
+  color: #0066cc;
+  font-weight: 500;
+}
+
+/* Status Text Styles */
+.status-text, .empty-text {
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.error-text {
+  color: #cc0000;
+  font-size: 14px;
+  background: #fff5f5;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ffcccc;
+}

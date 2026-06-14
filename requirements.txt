@@ -1,5 +1,6 @@
-streamlit
+google-genai
 supabase
 uvicorn
 fastapi
 python-dotenv
+axios

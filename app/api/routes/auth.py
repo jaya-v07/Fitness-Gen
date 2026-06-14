@@ -1,3 +1,5 @@
+from unittest import case
+
 from fastapi import APIRouter, HTTPException, status
 from app.schemas.profile import SignUpRequest, ProfileCreate # Just email and password
 from app.db.supabase import supabase
@@ -11,18 +13,32 @@ def sign_up_user(request: SignUpRequest):
             "email": request.email,
             "password": request.password
         })
-        
+        # 1. Catch validation errors returned directly in the response object
+        if hasattr(auth_response, 'error') and auth_response.error is not None:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST, 
+                detail=auth_response.error.message
+            )
+        # 2. Catch edge cases where user is missing but no error object was attached
         if not auth_response.user:
-            raise HTTPException(status_code=400, detail="Signup failed.")
-            
-        # Return the user_id back to the frontend so it knows who just logged in
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST, 
+                detail="Signup failed. Please check your credentials."
+            )
         return {
             "status": "success",
             "message": "Account created!",
             "user_id": auth_response.user.id
         }
+    except HTTPException as http_ex:
+        # Re-raise our own HTTPExceptions so they don't get swallowed by the generic block
+        raise http_ex
     except Exception as e:
-        raise HTTPException(status_code=400, detail=str(e))
+        print(f"🔴 EXCEPTION CAUGHT: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, 
+            detail=str(e)
+        )
 
 @auth_router.post("/signup/profile", status_code=status.HTTP_201_CREATED)
 def create_user_profile(request: ProfileCreate):
