@@ -30,4 +30,5 @@ Fitness-Gen/
     POST api/auth/signup
     POST api/auth/signup/profile
 ### Workouts
-    */api/workout/generate
+    POST api/workout/generate
+    GET api/workout/{user_id}
