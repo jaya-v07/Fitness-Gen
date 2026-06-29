@@ -32,3 +32,8 @@ Fitness-Gen/
 ### Workouts
     POST api/workout/generate
     GET api/workout/{user_id}
+
+    to start
+    ```text
+    docker compose up --build
+    ```
