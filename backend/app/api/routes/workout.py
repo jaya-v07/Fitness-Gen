@@ -1,7 +1,7 @@
 
 from fastapi import APIRouter, HTTPException, status
-from app.schemas.workout import WorkoutRequest, WorkoutResponse
-from app.services.workout_service import WorkoutService
+from backend.app.schemas.workout import WorkoutRequest, WorkoutResponse
+from backend.app.services.workout_service import WorkoutService
 
 workout_service = WorkoutService()
 router = APIRouter()

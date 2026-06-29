@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Button from "../components/button";
+import Dashboard from "./Dashboard";
 
 const Signup = ({ navigateTo }) => {
   const [email, setEmail] = useState("");
@@ -33,7 +35,7 @@ else {
   return (
     <main className="bg-black min-h-screen flex items-center justify-center">
       <div className="bg-zinc-900 p-8 rounded-xl w-96">
-        <h1 className="text-white text-3xl font-bold mb-6">
+        <h1 className="text-white text-3xl font-bold mb-6" table>
           Sign Up  |   Login
         </h1>
 
@@ -44,7 +46,7 @@ else {
             className="w-full p-3 rounded bg-zinc-800 text-white"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-          />
+          / >
 
           <input
             type="password"
@@ -52,7 +54,7 @@ else {
             className="w-full p-3 rounded bg-zinc-800 text-white"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          />
+          / >
 
           <button
             type="submit"
@@ -66,7 +68,10 @@ else {
             </p>
           )}
         </form>
-                  
+           <Button 
+           children="go to profile dashboard"
+           onClick={() => navigateTo('dashboard')}
+           / >
         {/* <p className="text-gray-400 mt-4 text-center">
           Don't have an account?
           <button

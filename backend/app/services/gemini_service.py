@@ -1,6 +1,6 @@
 from google import genai
 from google.genai import types
-from app.schemas.gemini_workout import FullWorkoutPlanSchema
+from backend.app.schemas.gemini_workout import FullWorkoutPlanSchema
 import os, json
 class GeminiService:
     def __init__(self):

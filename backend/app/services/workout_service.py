@@ -1,5 +1,5 @@
-from app.db.supabase import supabase
-from app.services.gemini_service import GeminiService
+from backend.app.db.supabase import supabase
+from backend.app.services.gemini_service import GeminiService
 from fastapi import HTTPException
 from datetime import datetime, timedelta, timezone
 class WorkoutService:

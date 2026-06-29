@@ -1,8 +1,8 @@
 from unittest import case
 
 from fastapi import APIRouter, HTTPException, status
-from app.schemas.profile import SignUpRequest, ProfileCreate # Just email and password
-from app.db.supabase import supabase
+from backend.app.schemas.profile import SignUpRequest, ProfileCreate # Just email and password
+from backend.app.db.supabase import supabase
 auth_router = APIRouter()
 
 @auth_router.post("/signup", status_code=status.HTTP_201_CREATED)

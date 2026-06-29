@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 # Import your sub-routers from the routes subdirectory
-from app.api.routes import auth, workout 
+from backend.app.api.routes import workout
+from backend.app.api.routes import auth 
 
 api_router = APIRouter()
 
