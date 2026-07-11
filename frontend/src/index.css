@@ -8,8 +8,8 @@
   --color-soft-rose: #D9BBB0;
   --color-earth-taupe: #AD9C8E;
   --color-deep-charcoal: #1A1919; /* Made slightly deeper for maximum reading contrast */
+  --color-deep-charcoal-secondary: #2C2A29; 
 }
-
 html, body {
   background-color: var(--color-bg);
   color: var(--color-deep-charcoal);
