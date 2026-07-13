@@ -2,6 +2,7 @@ import "../index.css";
 import Button from '../components/button';
 import { features } from '../constants/home.js';
 import FeatureCard from '../components/feature-card.jsx';
+import ThemeToggle from '../components/theme-toggle.jsx';
 
 export default function Home({ navigateTo }) {
 
@@ -10,12 +11,15 @@ export default function Home({ navigateTo }) {
       {/* Navigation Header */}
       <header className="flex justify-between items-center max-w-6xl mx-auto px-6 py-6">
         <div className="text-xl font-bold tracking-tight text-deep-charcoal">FitnessGen</div>
-        <button 
-          onClick={() => navigateTo('signup')} 
-          className="text-sm font-medium text-deep-charcoal hover:text-earth-taupe transition-colors cursor-pointer"
-        >
-          Sign Up
-        </button>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <button 
+            onClick={() => navigateTo('signup')} 
+            className="rounded-full border border-earth-taupe bg-surface px-5 py-2 text-sm font-semibold text-deep-charcoal shadow-sm transition-all hover:-translate-y-0.5 hover:bg-champagne/40 hover:shadow-md cursor-pointer"
+          >
+            Sign Up
+          </button>
+        </div>
       </header>
 
       {/* Hero Section */}
@@ -37,7 +41,7 @@ export default function Home({ navigateTo }) {
           How It Works
         </h2>
         
-        <div className="bg-white border border-soft-rose/30 rounded-2xl p-6 shadow-[0_4px_20px_rgba(44,42,41,0.03)] flex gap-5 items-start">
+        <div className="bg-surface border border-soft-rose/30 rounded-2xl p-6 shadow-[0_4px_20px_rgba(44,42,41,0.03)] flex gap-5 items-start">
           <div className="text-sm font-bold text-deep-charcoal bg-champagne/40 px-3 py-1 rounded-md">
             01
           </div>
