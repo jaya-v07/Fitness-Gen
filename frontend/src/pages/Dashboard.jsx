@@ -2,12 +2,16 @@ import Button from "../components/button.jsx";
 import FormInput from "../components/form-input.jsx";
 import { useProfileForm } from "../hooks/useProfileForm.js";
 import { GOALS, EXPERIENCE } from "../constants/DashOptions.js";
+import ThemeToggle from "../components/theme-toggle.jsx";
 
 export default function Dashboard({ navigateTo, userId }) {
   const { formData, loading, error, handleChange, handleSubmit } = useProfileForm(userId, navigateTo);
 
   return (
-    <div className="min-h-screen bg-bg text-deep-charcoal flex items-center justify-center px-6 py-10">
+    <div className="relative flex min-h-screen items-center justify-center bg-bg px-6 py-10 text-deep-charcoal">
+      <div className="absolute right-6 top-6">
+        <ThemeToggle />
+      </div>
       <div className="w-full max-w-2xl">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-black tracking-tight">Tell us about you</h1>
@@ -16,7 +20,7 @@ export default function Dashboard({ navigateTo, userId }) {
 
         <form
           onSubmit={handleSubmit}
-          className="space-y-5 rounded-2xl border border-soft-rose/30 bg-white p-8 shadow-[0_4px_20px_rgba(44,42,41,0.03)]"
+          className="space-y-5 rounded-2xl border border-soft-rose/30 bg-surface p-8 shadow-[0_4px_20px_rgba(44,42,41,0.03)]"
         >
           {error && (
             <div className="rounded-lg border border-red-300 bg-red-50 px-4 py-2 text-sm text-red-700">
@@ -94,4 +98,3 @@ export default function Dashboard({ navigateTo, userId }) {
     </div>
   );
 }
-
