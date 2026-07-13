@@ -1,6 +1,6 @@
 export default function FormInput({ label, type = "text", children, ...props }) {
   const baseClasses =
-    "w-full rounded-xl border border-soft-rose/50 bg-white px-4 py-3 text-deep-charcoal outline-none transition-all duration-200 placeholder:text-earth-taupe/70 focus:border-earth-taupe focus:ring-2 focus:ring-champagne";
+    "w-full rounded-xl border border-soft-rose/50 bg-input px-4 py-3 text-deep-charcoal outline-none transition-all duration-200 placeholder:text-earth-taupe/70 focus:border-earth-taupe focus:ring-2 focus:ring-champagne";
 
   return (
     <div>
