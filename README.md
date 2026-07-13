@@ -28,6 +28,7 @@ Fitness-Gen/
 ### Authentication
     GET api/auth/home
     POST api/auth/signup
+    GET api/auth/login
     POST api/auth/signup/profile
 ### Workouts
     POST api/workout/generate
