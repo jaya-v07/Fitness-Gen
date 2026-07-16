@@ -1,9 +1,42 @@
-from unittest import case
-
 from fastapi import APIRouter, HTTPException, status
 from app.schemas.profile import SignUpRequest, ProfileCreate # Just email and password
 from app.db.supabase import supabase
 auth_router = APIRouter()
+
+@auth_router.get("/home")
+def auth_home():
+    return {"status": "success", "message": "FitnessGen authentication API is available."}
+
+@auth_router.get("/login")
+def login_status():
+    return {"status": "success", "message": "FitnessGen login endpoint is available."}
+
+@auth_router.post("/login")
+def login_user(request: SignUpRequest):
+    try:
+        auth_response = supabase.auth.sign_in_with_password({
+            "email": request.email,
+            "password": request.password,
+        })
+
+        if not auth_response.user:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Invalid email or password.",
+            )
+
+        return {
+            "status": "success",
+            "message": "Logged in successfully!",
+            "user_id": auth_response.user.id,
+        }
+    except HTTPException as http_ex:
+        raise http_ex
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail=str(e),
+        )
 
 @auth_router.post("/signup", status_code=status.HTTP_201_CREATED)
 def sign_up_user(request: SignUpRequest):

@@ -28,7 +28,13 @@ Fitness-Gen/
 ### Authentication
     GET api/auth/home
     POST api/auth/signup
+    GET api/auth/login
     POST api/auth/signup/profile
 ### Workouts
     POST api/workout/generate
     GET api/workout/{user_id}
+
+    to start
+    ```text
+    docker compose up --build
+    ```

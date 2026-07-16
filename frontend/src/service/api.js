@@ -1,10 +1,23 @@
-import axios from 'axios';
+import axios from "axios";
 
-// Create an instance with your backend's base URL
 const API = axios.create({
-  baseURL: process.env.BASE_URL, // Change to your actual backend URL/port
+  baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:8000",
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 });
-export default API;
+
+const getData = (request) => request.then((response) => response.data);
+
+export const api = {
+  getAuthHome: () => getData(API.get("/api/auth/home")),
+
+  getLogin: () => getData(API.get("/api/auth/login")),
+
+  signUp: (credentials) => getData(API.post("/api/auth/signup", credentials)),
+
+  login: (credentials) => getData(API.post("/api/auth/login", credentials)),
+
+  saveProfile: (profileData) =>
+    getData(API.post("/api/auth/signup/profile", profileData)),
+};
