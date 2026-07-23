@@ -2,25 +2,10 @@ import "../index.css";
 import Button from '../components/button';
 import { features } from '../constants/home.js';
 import FeatureCard from '../components/feature-card.jsx';
-import ThemeToggle from '../components/theme-toggle.jsx';
-
 export default function Home({ navigateTo }) {
 
   return (
     <div className="min-h-screen bg-bg selection:bg-champagne">
-      {/* Navigation Header */}
-      <header className="flex justify-between items-center max-w-6xl mx-auto px-6 py-6">
-        <div className="text-xl font-bold tracking-tight text-deep-charcoal">FitnessGen</div>
-        <div className="flex items-center gap-3">
-          <ThemeToggle />
-          <button 
-            onClick={() => navigateTo('signup')} 
-            className="rounded-full border border-earth-taupe bg-surface px-5 py-2 text-sm font-semibold text-deep-charcoal shadow-sm transition-all hover:-translate-y-0.5 hover:bg-champagne/40 hover:shadow-md cursor-pointer"
-          >
-            Sign Up
-          </button>
-        </div>
-      </header>
 
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center text-center px-6 pt-20 pb-24 max-w-3xl mx-auto">
