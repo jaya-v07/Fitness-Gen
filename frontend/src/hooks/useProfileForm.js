@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GOALS, EXPERIENCE } from "../constants/DashOptions.js";
+import { GOALS, EXPERIENCE } from "../constants/OnboardingForm.js";
 import { api } from "../service/api.js";
 
 export function useProfileForm(userId, onSuccess) {

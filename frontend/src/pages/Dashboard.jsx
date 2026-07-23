@@ -1,17 +1,13 @@
 import Button from "../components/button.jsx";
 import FormInput from "../components/form-input.jsx";
 import { useProfileForm } from "../hooks/useProfileForm.js";
-import { GOALS, EXPERIENCE } from "../constants/DashOptions.js";
-import ThemeToggle from "../components/theme-toggle.jsx";
+import { GOALS, EXPERIENCE } from "../constants/OnboardingForm.js";
 
 export default function Dashboard({ navigateTo, userId }) {
   const { formData, loading, error, handleChange, handleSubmit } = useProfileForm(userId, navigateTo);
 
   return (
     <div className="relative flex min-h-screen items-center justify-center bg-bg px-6 py-10 text-deep-charcoal">
-      <div className="absolute right-6 top-6">
-        <ThemeToggle />
-      </div>
       <div className="w-full max-w-2xl">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-black tracking-tight">Tell us about you</h1>

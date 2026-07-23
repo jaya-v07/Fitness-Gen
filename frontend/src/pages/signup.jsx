@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Button from "../components/button.jsx";
 import { api } from "../service/api.js";
-import ThemeToggle from "../components/theme-toggle.jsx";
 
 const Signup = ({ navigateTo, onAuthenticated }) => {
   const [mode, setMode] = useState("signup");
@@ -28,12 +27,8 @@ const Signup = ({ navigateTo, onAuthenticated }) => {
   }
   return (
     <main className="relative flex min-h-screen items-center justify-center bg-bg px-6 py-10">
-      <div className="absolute right-6 top-6">
-        <ThemeToggle />
-      </div>
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
-          <p className="mb-2 text-xs font-bold uppercase tracking-widest text-earth-taupe">FitnessGen</p>
           <h1 className="text-4xl font-bold tracking-tight text-deep-charcoal">
             {mode === "signup" ? "Create your account" : "Welcome back"}
           </h1>

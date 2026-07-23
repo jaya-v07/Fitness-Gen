@@ -33,3 +33,15 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+/* Dropdown slide-in animation (used by Navbar profile dropdown) */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
